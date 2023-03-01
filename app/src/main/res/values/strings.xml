@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SmartCarParkAdmin</string>
+    <string name="compound">Compound</string>
+    <string name="notificationfragment">NotificationFragment</string>
+</resources>
