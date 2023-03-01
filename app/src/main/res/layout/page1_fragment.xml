@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.NotificationFragment">
 
-
+    <include layout="@layout/header"/>
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
