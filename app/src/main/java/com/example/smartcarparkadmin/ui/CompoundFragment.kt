@@ -17,8 +17,6 @@ class CompoundFragment : Fragment() {
     private lateinit var binding: CompoundBinding
     private val nav by lazy { findNavController() }
 
-
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = CompoundBinding.inflate(inflater, container, false)
 
