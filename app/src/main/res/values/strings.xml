@@ -2,4 +2,7 @@
     <string name="app_name">SmartCarParkAdmin</string>
     <string name="compound">Compound</string>
     <string name="notificationfragment">NotificationFragment</string>
+    <string name="issue_compound">Issue Compound</string>
+    <string name="compound_list">Compound List</string>
+    <string name="SuspensionList">Suspension List</string>
 </resources>

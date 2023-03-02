@@ -8,14 +8,23 @@
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_info.xml" value="0.1535" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_login.xml" value="0.1535" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_logout.xml" value="0.1535" />
+        <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_mail_background.xml" value="0.1615" />
+        <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_mail_foreground.xml" value="0.1615" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_num1.xml" value="0.1" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_num2.xml" value="0.1" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_num3.xml" value="0.1" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_num4.xml" value="0.1" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_num5.xml" value="0.1" />
+        <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_profile_foreground.xml" value="0.1615" />
+        <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_profiles_background.xml" value="0.1615" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_success.xml" value="0.1525" />
+        <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/mail.xml" value="0.1615" />
+        <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/profile.xml" value="0.1615" />
+        <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/tada.xml" value="0.1605" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/layout/activity_main.xml" value="0.11372381359555365" />
-        <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/layout/compound.xml" value="0.1" />
+        <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/layout/compound.xml" value="0.2" />
+        <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/layout/compound_insert.xml" value="0.264" />
+        <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/layout/compound_update.xml" value="0.10773834972210346" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/layout/fragment_home.xml" value="0.18127404873877725" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/layout/fragment_login.xml" value="0.1145788798631894" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/layout/header.xml" value="0.4" />
@@ -27,6 +36,7 @@
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/menu/drawer.xml" value="0.1" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/menu/drawer_login.xml" value="0.1145788798631894" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/menu/drawler.xml" value="0.1145788798631894" />
+        <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/mipmap-anydpi-v26/ic_profiles.xml" value="0.1615" />
       </map>
     </option>
   </component>

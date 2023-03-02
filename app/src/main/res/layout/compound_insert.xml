@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CompoundInsert">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="90dp" />
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/header" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/carplate"
+        style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+        android:layout_width="300sp"
+        android:layout_height="80sp"
+        android:layout_marginTop="45dp"
+        android:text="@string/issue_compound"
+        android:textColor="@color/tarblue"
+        app:iconTint="@color/tarblue"
+        app:strokeColor="@color/tarblue"
+        android:textSize="20sp"
+        app:cornerRadius="25dp"
+        app:icon="@drawable/ic_mail_foreground"
+        app:iconPadding="-40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/include2"
+        app:layout_constraintTop_toBottomOf="@+id/include2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fullnamecom"
+        style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+        android:layout_width="300sp"
+        android:layout_height="80sp"
+        android:layout_marginTop="45dp"
+        android:text="@string/issue_compound"
+        android:textColor="@color/tarblue"
+        android:textSize="20sp"
+        app:cornerRadius="25dp"
+        app:iconSize="@android:dimen/notification_large_icon_height"
+        app:icon="@mipmap/ic_profiles_foreground"
+        app:iconPadding="-40dp"
+        app:iconTint="@color/tarblue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carplate"
+        app:strokeColor="@color/tarblue" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

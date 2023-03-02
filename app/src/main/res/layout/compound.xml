@@ -2,11 +2,77 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Compound"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
     tools:context=".ui.CompoundFragment">
-    <include layout="@layout/header"/>
 
+    <include
+        android:id="@+id/include"
+        layout="@layout/header"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="153dp" />
+
+    <TextView
+        android:id="@+id/compound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="@string/compound"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="38sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/issueCompound"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="290sp"
+        android:layout_height="80sp"
+        android:layout_marginTop="45dp"
+        android:text="@string/issue_compound"
+        android:textColor="@color/tarblue"
+        android:textSize="20sp"
+        app:cornerRadius="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/compound"
+        app:strokeColor="@color/tarblue" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/CompoundList"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="290sp"
+        android:layout_height="80sp"
+        android:layout_marginTop="45dp"
+        android:text="@string/compound_list"
+        android:textColor="@color/tarblue"
+        android:textSize="20sp"
+        app:cornerRadius="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/issueCompound"
+        app:strokeColor="@color/tarblue" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/SuspensionList"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="290sp"
+        android:layout_height="80sp"
+        android:layout_marginTop="45dp"
+        android:text="@string/SuspensionList"
+        android:textColor="@color/tarblue"
+        android:textSize="20sp"
+        app:cornerRadius="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CompoundList"
+        app:strokeColor="@color/tarblue" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
