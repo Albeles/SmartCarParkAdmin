@@ -10,6 +10,7 @@
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_logout.xml" value="0.1535" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_mail_background.xml" value="0.1615" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_mail_foreground.xml" value="0.1615" />
+        <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_mails_background.xml" value="0.1615" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_num1.xml" value="0.1" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_num2.xml" value="0.1" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_num3.xml" value="0.1" />
@@ -17,6 +18,7 @@
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_num5.xml" value="0.1" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_profile_foreground.xml" value="0.1615" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_profiles_background.xml" value="0.1615" />
+        <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_studentID_background.xml" value="0.1615" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/ic_success.xml" value="0.1525" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/mail.xml" value="0.1615" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/drawable/profile.xml" value="0.1615" />
@@ -36,6 +38,7 @@
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/menu/drawer.xml" value="0.1" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/menu/drawer_login.xml" value="0.1145788798631894" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/menu/drawler.xml" value="0.1145788798631894" />
+        <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/mipmap-anydpi-v26/ic_mails.xml" value="0.1615" />
         <entry key="..\:/Users/Asus/SmartCarParkAdmin/app/src/main/res/mipmap-anydpi-v26/ic_profiles.xml" value="0.1615" />
       </map>
     </option>
