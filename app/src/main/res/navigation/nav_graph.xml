@@ -10,6 +10,8 @@
         android:name="com.example.smartcarparkadmin.ui.LoginFragment"
         android:label="login"
         tools:layout="@layout/login" />
+
+
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.smartcarparkadmin.ui.HomeFragment"
@@ -29,6 +31,10 @@
         android:id="@+id/parkingLotFragment"
         android:name="com.example.smartcarparkadmin.ui.ParkingLotFragment"
         android:label="ParkingLotFragment" />
+    <fragment
+        android:id="@+id/compoundInsert"
+        android:name="com.example.smartcarparkadmin.ui.CompoundInsert"
+        android:label="CompoundInsert" />
 
 
 </navigation>

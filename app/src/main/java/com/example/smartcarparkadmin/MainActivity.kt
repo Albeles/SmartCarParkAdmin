@@ -38,7 +38,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.loginFragment,
                 R.id.compoundFragment,
                 R.id.notificationFragment,
-                R.id.parkingLotFragment
+                R.id.parkingLotFragment,
+                R.id.compoundInsert
 
             ),
             binding.drawerLayout
@@ -93,8 +94,7 @@ class MainActivity : AppCompatActivity() {
         // TODO(4): Logout -> auth.logout(...)
         //          Clear navigation backstack
         auth.logout(this)
-        nav.popBackStack(R.id.homeFragment, false)
-        nav.navigateUp()
+        nav.popBackStack(R.id.compoundFragment, false)
 
         binding.drawerLayout.close()
         return true
