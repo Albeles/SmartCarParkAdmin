@@ -38,8 +38,8 @@ class LoginFragment : Fragment() {
         hideKeyboard()
 
         val ctx      = requireContext()
-        val email    = binding.edtEmail.text.toString().trim()
-        val password = binding.edtPassword.text.toString().trim()
+        val email    = binding.edtEmails.text.toString().trim()
+        val password = binding.edtPasswords.text.toString().trim()
         val remember = binding.chkRemember.isChecked
 
         // TODO(3): Login -> auth.login(...)

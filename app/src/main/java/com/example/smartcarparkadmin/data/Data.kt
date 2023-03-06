@@ -9,6 +9,9 @@ import com.google.firebase.firestore.DocumentId
 import com.google.firebase.firestore.PropertyName
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.type.Date
+import com.google.type.DateTime
+import java.util.*
 
 data class Post(
     @DocumentId
@@ -20,11 +23,14 @@ data class Post(
 data class User(
     @DocumentId
     var id      : String = "",
+    var carPlate : String = "",
     var email   : String = "",
     var name    : String = "",
     var phoneNo : String = "",
     var studentId : String = "",
-)
+    var compoundCount : Int = 0,
+    var password : String = ""
+    )
 
 data class Admin (
     @DocumentId
@@ -35,16 +41,18 @@ data class Admin (
     var photo   : Blob   = Blob.fromBytes(ByteArray(0)),
 )
 
-data class Compound (
+data class Compounds (
     @DocumentId
     var id:String="",
-    var amount: String = "",
-    var name: String = "",
+    var amount: Int =0,
+    var date: java.util.Date = Date(),
     var status: String = "",
+    var carplate : String = "",
+    var location : String = ""
 
 )
 
-data class notification (
+data class Notification (
     @DocumentId
     var id:String="",
     var ID: String = "",
@@ -54,8 +62,9 @@ data class notification (
 
     )
 
-val USERS = Firebase.firestore.collection("admin")
-
+val ADMIN = Firebase.firestore.collection("admin")
+val USERS = Firebase.firestore.collection("users")
+val COMPOUND = Firebase.firestore.collection("compound")
 
 fun RESTORE_USERS(ctx: Context) {
     // (1) DELETE users

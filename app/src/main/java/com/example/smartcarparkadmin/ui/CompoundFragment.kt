@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.navigateUp
 import com.example.smartcarparkadmin.data.CompoundViewModel
@@ -15,11 +16,14 @@ import com.example.smartcarparkadmin.databinding.HeaderLoginBinding
 import com.example.smartcarparkadmin.util.setImageBlob
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.recyclerview.widget.DividerItemDecoration
+
 import com.example.smartcarparkadmin.R
 
 class CompoundFragment : Fragment() {
     private lateinit var binding: CompoundBinding
     private val nav by lazy { findNavController() }
+    private val vm: CompoundViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = CompoundBinding.inflate(inflater, container, false)

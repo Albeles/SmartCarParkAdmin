@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.CompoundInsert">
+    android:layout_height="3000dp"
+    tools:context=".ui.CompoundInsert"
+    >
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -32,8 +33,9 @@
         android:textColorHint="@color/tarblue"
         app:boxBackgroundColor="@color/white"
         app:placeholderTextColor="@color/tarblue"
+        style="?attr/textInputOutlinedStyle"
         app:startIconDrawable="@mipmap/ic_mails_foreground"
-        android:id="@+id/carplate"
+        android:id="@+id/carplates"
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:layout_marginTop="45dp"
@@ -44,85 +46,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include2">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="300dp"
-            android:layout_height="100dp"
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/carplate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
 
-        app:hintEnabled="true"
-        app:helperTextTextAppearance="@string/platenumber"
-        app:helperTextTextColor="@color/tarblue"
-        app:startIconTint="@color/tarblue"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopStart="20dp"
-        app:boxCornerRadiusBottomEnd="20dp"
-        app:boxStrokeWidth="2dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:hintTextColor="@color/tarblue"
-        android:textColorHint="@color/tarblue"
-        app:boxBackgroundColor="@color/white"
-        app:placeholderTextColor="@color/tarblue"
-        app:startIconDrawable="@mipmap/ic_studentid_foreground"
-        android:id="@+id/studentid"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="45dp"
-        android:background="@null"
-        android:hint="@string/studentid"
-        android:textColor="@color/tarblue"
+    <Button
+        android:id="@+id/compoundsubmit"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/tarblue"
+
+        android:text="@string/issue"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/ComBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carplates" />
+
+    <Button
+        android:id="@+id/ComBack"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="80dp"
+        android:text="@string/back"
+
+        app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/include2"
-        app:layout_constraintTop_toBottomOf="@+id/carplate">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-
-        app:hintEnabled="true"
-        app:helperTextTextAppearance="@string/platenumber"
-        app:helperTextTextColor="@color/tarblue"
-        app:startIconTint="@color/tarblue"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopStart="20dp"
-        app:boxCornerRadiusBottomEnd="20dp"
-        app:boxStrokeWidth="2dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:hintTextColor="@color/tarblue"
-        android:textColorHint="@color/tarblue"
-        app:boxBackgroundColor="@color/white"
-        app:placeholderTextColor="@color/tarblue"
-        app:startIconDrawable="@mipmap/ic_profiles_foreground"
-        android:id="@+id/fullnamecom"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="45dp"
-        android:background="@null"
-        android:hint="@string/studentid"
-        android:textColor="@color/tarblue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="@+id/include2"
-        app:layout_constraintTop_toBottomOf="@+id/studentid"
-        app:strokeColor="@color/tarblue" >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
+        app:layout_constraintTop_toBottomOf="@+id/carplates" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

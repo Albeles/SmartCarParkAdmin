@@ -68,7 +68,7 @@ class AuthViewModel : ViewModel() {
         // TODO(1A): Get the user record with matching email + password
         //           Return false is no matching found
 
-        val user = USERS
+        val admin = ADMIN
 
             .whereEqualTo("adminEmail", email)
             .whereEqualTo("password", password)
@@ -78,7 +78,7 @@ class AuthViewModel : ViewModel() {
             .firstOrNull() ?: return false
 
         listener?.remove()
-        listener = USERS.document(user.id).addSnapshotListener { doc, _ ->
+        listener = ADMIN.document(admin.id).addSnapshotListener { doc, _ ->
             userLiveData.value = doc?.toObject()
         }
 
@@ -108,16 +108,13 @@ class AuthViewModel : ViewModel() {
 
     suspend fun writeNewUser( email: String, name: String,password: String):Boolean {
 
-        val user = USERS
+        val user = ADMIN
 
             .whereEqualTo("adminEmail", email)
             .get()
             .await()
             .toObjects<Admin>()
             .firstOrNull() ?: return false
-
-
-
 
         db.collection("admin").document(user.id).update("name",name,"password",password)
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:contentDescription="@string/cd_home"
+        android:title="@string/cd_home" />
+    <item
+        android:id="@+id/compoundFragment"
+        android:icon="@drawable/ic_compound"
+        android:contentDescription="@string/cd_compound"
+        android:title="@string/cd_compound" />
+    <item
+        android:id="@+id/notificationFragment"
+        android:icon="@drawable/ic_notification"
+        android:contentDescription="@string/cd_notification"
+        android:title="@string/cd_notification" />
+    <item
+        android:id="@+id/SuspensionList"
+        android:icon="@drawable/ic_profile"
+        android:contentDescription="@string/cd_profile"
+        android:title="@string/cd_profile" />
+</menu>

@@ -26,6 +26,7 @@
         android:id="@+id/notificationFragment"
         android:name="com.example.smartcarparkadmin.ui.NotificationFragment"
         android:label="fragment_home"
+
         tools:layout="@layout/notification" />
     <fragment
         android:id="@+id/parkingLotFragment"

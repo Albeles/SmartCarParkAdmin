@@ -7,4 +7,17 @@
     <string name="SuspensionList">Suspension List</string>
     <string name="studentid">Compound List</string>
     <string name="platenumber">enter plate number</string>
+    <string name="submit">Submit</string>
+    <string name="back">Back</string>
+    <string name="fullname">enter full name</string>
+    <string name="issue">Issue</string>
+    <string name="cd_home">Home</string>
+    <string name="cd_compound">compound</string>
+    <string name="cd_notification">notification</string>
+    <string name="cd_profile">profile</string>
+    <string name="fui_password_hint">enter password</string>
+    <string name="fui_email_hint">enter email</string>
+
+
+
 </resources>
