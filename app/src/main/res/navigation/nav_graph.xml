@@ -36,6 +36,16 @@
         android:id="@+id/compoundInsert"
         android:name="com.example.smartcarparkadmin.ui.CompoundInsert"
         android:label="CompoundInsert" />
+    <fragment
+        android:id="@+id/compoundListFragment"
+        android:name="com.example.smartcarparkadmin.ui.CompoundListFragment"
+        android:label="compound_list"
+        tools:layout="@layout/compound_list" />
+    <fragment
+        android:id="@+id/compoundUpdateFragment"
+        android:name="com.example.smartcarparkadmin.ui.CompoundUpdateFragment"
+        android:label="compound_update"
+        tools:layout="@layout/compound_update" />
 
 
 </navigation>

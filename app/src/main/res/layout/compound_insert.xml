@@ -14,70 +14,75 @@
         android:orientation="vertical"
         app:layout_constraintGuide_begin="90dp" />
 
-    <include
-        android:id="@+id/include2"
-        layout="@layout/header" />
-
     <com.google.android.material.textfield.TextInputLayout
 
-        app:hintEnabled="true"
-        app:helperTextTextAppearance="@string/platenumber"
-        app:helperTextTextColor="@color/tarblue"
-        app:startIconTint="@color/tarblue"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopStart="20dp"
-        app:boxCornerRadiusBottomEnd="20dp"
-        app:boxStrokeWidth="2dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:hintTextColor="@color/tarblue"
-        android:textColorHint="@color/tarblue"
-        app:boxBackgroundColor="@color/white"
-        app:placeholderTextColor="@color/tarblue"
-        style="?attr/textInputOutlinedStyle"
-        app:startIconDrawable="@mipmap/ic_mails_foreground"
         android:id="@+id/carplates"
+        style="?attr/textInputOutlinedStyle"
         android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="45dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="80dp"
         android:background="@null"
         android:hint="@string/platenumber"
         android:textColor="@color/tarblue"
+        android:textColorHint="@color/tarblue"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeWidth="2dp"
+        app:helperTextTextAppearance="@string/platenumber"
+        app:helperTextTextColor="@color/tarblue"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/tarblue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include2">
+        app:layout_constraintTop_toTopOf="parent"
+        app:placeholderTextColor="@color/tarblue"
+        app:startIconDrawable="@mipmap/ic_mails_foreground"
+        app:startIconTint="@color/tarblue">
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:id="@+id/carplate"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
+            android:layout_height="match_parent" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <Spinner
+        android:id="@+id/locates"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:entries="@array/location"
+        android:labelFor="@id/carplates"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carplates" />
 
     <Button
         android:id="@+id/compoundsubmit"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:backgroundTint="@color/tarblue"
-
+        android:layout_marginTop="60dp"
         android:text="@string/issue"
         android:textColor="@color/white"
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toStartOf="@+id/ComBack"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/carplates" />
+        app:layout_constraintTop_toBottomOf="@+id/locates" />
 
     <Button
         android:id="@+id/ComBack"
         android:layout_width="100dp"
         android:layout_height="60dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="80dp"
-        android:text="@string/back"
 
+        android:text="@string/back"
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/carplates" />
+        app:layout_constraintTop_toBottomOf="@+id/locates" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

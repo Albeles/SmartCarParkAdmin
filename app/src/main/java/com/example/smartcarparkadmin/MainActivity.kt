@@ -41,21 +41,25 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
        // binding.navView.visibility= View.INVISIBLE
         binding.navView.visibility= View.VISIBLE
+
         val navHostFragment = supportFragmentManager.findFragmentById(
             R.id.nav_host_container
         ) as NavHostFragment
         navController = navHostFragment.navController
+
         binding.navView.setupWithNavController(navController)
         appBarConfiguration = AppBarConfiguration(
             setOf(R.id.homeFragment, R.id.compoundFragment, R.id.notificationFragment)
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
-        nav.navigate(R.id.compoundInsert)
-        nav.popBackStack(R.id.homeFragment, true)
+//        nav.navigate(R.id.compoundInsert)
+//        nav.popBackStack(R.id.homeFragment, true)
 
 
         // AppBarConfiguration

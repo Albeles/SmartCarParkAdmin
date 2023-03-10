@@ -17,7 +17,14 @@
     <string name="cd_profile">profile</string>
     <string name="fui_password_hint">enter password</string>
     <string name="fui_email_hint">enter email</string>
-
-
+    <string name="xxxx">XXXX</string>
+    <array name="locationss">
+    <item>BlockK</item>
+    <item>BlockV</item>
+</array>
+<string-array name="location">
+    <item>BlockK</item>
+    <item>BlockV</item>
+</string-array>
 
 </resources>

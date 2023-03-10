@@ -29,7 +29,8 @@ data class User(
     var phoneNo : String = "",
     var studentId : String = "",
     var compoundCount : Int = 0,
-    var password : String = ""
+    var password : String = "",
+    var status : String = ""
     )
 
 data class Admin (
@@ -55,7 +56,7 @@ data class Compounds (
 data class Notification (
     @DocumentId
     var id:String="",
-    var ID: String = "",
+    var Date: java.util.Date = Date(),
     var Title: String = "",
     var Description: String = "",
 

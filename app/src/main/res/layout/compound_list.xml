@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.CompoundList">
+    tools:context=".ui.CompoundListFragment">
 
     <View
         android:id="@+id/divider"
@@ -25,7 +25,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.SearchView
+    <SearchView
         android:id="@+id/sv"
         android:layout_width="280dp"
         android:layout_height="45dp"
@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtCount" />
     <!--        android:background="@drawable/search_background"-->
     <Button
-        android:id="@+id/btnId"
+        android:id="@+id/addNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -54,7 +54,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="desc"
-        app:layout_constraintStart_toEndOf="@+id/btnId"
+        app:layout_constraintStart_toEndOf="@+id/addNo"
         app:layout_constraintTop_toBottomOf="@+id/sv" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -65,7 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider"
-        tools:listitem="@layout/compoundlist" />
+        tools:listitem="@layout/compoundlistshow" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

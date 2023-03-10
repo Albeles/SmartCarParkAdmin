@@ -38,15 +38,13 @@ class CompoundInsert : Fragment(){
         val carplate    = binding.carplate.text.toString().trim()
 
 
-        // TODO(3): Login -> auth.login(...)
-        //          Clear navigation backstack
         lifecycleScope.launch{
 
 
                 val success = auths.checkUser(ctx,carplate)
                 if (success) {
                     auths.addCC(ctx,carplate)
-                    auths.addCompound(carplate)
+                    auths.addCompound(carplate,binding.locates.selectedItem.toString())
                     nav.navigateUp()
                 }else
                 {

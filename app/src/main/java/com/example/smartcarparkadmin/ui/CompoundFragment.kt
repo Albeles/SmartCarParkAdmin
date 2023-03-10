@@ -28,6 +28,7 @@ class CompoundFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = CompoundBinding.inflate(inflater, container, false)
         binding.issueCompound.setOnClickListener { compound() }
+        binding.CompoundList.setOnClickListener { comlist() }
 
 
         return binding.root
@@ -35,6 +36,10 @@ class CompoundFragment : Fragment() {
     private fun compound(){
         nav.navigate(R.id.compoundInsert)
 
+    }
+
+    private fun comlist(){
+        nav.navigate(R.id.compoundListFragment)
 
     }
 
