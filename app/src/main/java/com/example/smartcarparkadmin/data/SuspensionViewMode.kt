@@ -50,11 +50,11 @@ class SuspensionViewMode : ViewModel(){
         var list = uLists
 
         list = list.filter {
-            it.id.contains(name, true)
+            it.status.contains(name, true)
         }
 
         list = when (field) {
-            "name" -> list.sortedBy { it.name }
+            "status" -> list.sortedBy { it.status }
             "carPlate" -> list.sortedBy { it.carPlate }
             else -> list
         }
@@ -63,5 +63,12 @@ class SuspensionViewMode : ViewModel(){
         ulist.value = list
     }
 
+
+
+
+    fun search(name: String) {
+        this.name = name
+        updateResult()
+    }
 
 }

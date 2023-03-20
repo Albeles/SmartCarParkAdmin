@@ -71,12 +71,9 @@ class CompoundViewModel : ViewModel(){
 
     suspend fun addCompound( carplate: String,location:String):Boolean {
         val calendar = Calendar.getInstance()
-        if (comcount>=3){
-            tamount *= 3
 
-        }else{
             tamount=50
-        }
+
         val l = Compounds(
             id= "",
             amount = tamount,
@@ -108,7 +105,7 @@ class CompoundViewModel : ViewModel(){
 
         var ccount = users.compoundCount.toInt()
         comcount = ccount
-
+        
         var status = "suspended"
             if (ccount == 2){
                 ccount+=1
@@ -236,7 +233,7 @@ class CompoundViewModel : ViewModel(){
         var list = compList
 
         list = list.filter {
-            it.id.contains(name, true)
+            it.carplate.contains(name, true)
         }
 
         list = when (field) {

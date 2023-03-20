@@ -27,13 +27,12 @@
 
     <SearchView
         android:id="@+id/sv"
-        android:layout_width="280dp"
+        android:layout_width="350dp"
         android:layout_height="45dp"
-
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:iconifiedByDefault="false"
-        android:queryHint="Enter description"
+        android:queryHint="Search via car plate number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCount" />
     <!--        android:background="@drawable/search_background"-->
@@ -43,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="id"
+        android:text="@string/carplate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sv" />
 
@@ -53,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="desc"
+        android:text="@string/date"
         app:layout_constraintStart_toEndOf="@+id/addNo"
         app:layout_constraintTop_toBottomOf="@+id/sv" />
 

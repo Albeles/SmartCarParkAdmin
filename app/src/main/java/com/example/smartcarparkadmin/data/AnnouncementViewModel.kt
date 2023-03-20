@@ -1,30 +1,22 @@
 package com.example.smartcarparkadmin.data
 
-import android.content.Context
-import android.icu.text.CaseMap.Title
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObjects
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.tasks.await
-import java.time.LocalDate
-import java.time.LocalDateTime
 import java.util.*
 
-
-
-class NotificationViewMode : ViewModel(){
+class AnnouncementViewModel : ViewModel(){
     private var listener: ListenerRegistration? = null
-    private var noList = listOf<Notification>()
+    private var noList = listOf<uNotification>()
     private var db: FirebaseFirestore = FirebaseFirestore.getInstance()
-    private val nomlist = MutableLiveData<List<Notification>>()
-    private val col = Firebase.firestore.collection("adminNotification")
+    private val nomlist = MutableLiveData<List<uNotification>>()
     private val uno = Firebase.firestore.collection("notifications")
     private var name = ""       // Search
     private var field = ""      // Sort
@@ -39,9 +31,9 @@ class NotificationViewMode : ViewModel(){
 
     init {
         viewModelScope.launch {
-            col.addSnapshotListener { value, _ ->
+            uno.addSnapshotListener { value, _ ->
                 if (value == null) return@addSnapshotListener
-                noList = value.toObjects<Notification>()
+                noList = value.toObjects<uNotification>()
                 updateResult()
             }
         }
@@ -49,7 +41,7 @@ class NotificationViewMode : ViewModel(){
 
     fun getNo() = nomlist // live data
 
-    suspend fun addNo(Title:String,date:Date,desc:String){
+    suspend fun addUNo(Title:String, date: Date, desc:String){
         val l = uNotification(
             id= "",
             date = date,
@@ -66,11 +58,11 @@ class NotificationViewMode : ViewModel(){
         var list = noList
 
         list = list.filter {
-            it.Title.contains(name, true)
+            it.title.contains(name, true)
         }
 
         list = when (field) {
-            "Date" -> list.sortedBy { it.Date }
+            "date" -> list.sortedBy { it.date }
             else -> list
         }
         if (reverse) list = list.reversed()
@@ -84,7 +76,4 @@ class NotificationViewMode : ViewModel(){
         updateResult()
         return reverse
     }
-
-
-
 }

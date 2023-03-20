@@ -18,13 +18,33 @@
     <string name="fui_password_hint">enter password</string>
     <string name="fui_email_hint">enter email</string>
     <string name="xxxx">XXXX</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="sample_text">Phone Number</string>
+    <string name="car_plate_number">Car Plate Number</string>
+    <string name="status">Status</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="logout">Logout</string>
+    <string name="amount">Amount</string>
+    <string name="locations">Location</string>
+    <string name="profile_pic">Profile</string>
+    <string name="parkinglotaa">Parking Lot A</string>
+    <string name="parkinglotbb">Parking Lot B</string>
+    <string name="carplate">CarPlate</string>
+    <string name="date">Date</string>
+    <string name="view_announcement">View Announcement</string>
+    <string name="sort">Sort</string>
+    <string name="add_announcement">Add Anouncement</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="register">Register</string>
     <array name="locationss">
     <item>BlockK</item>
     <item>BlockV</item>
 </array>
 <string-array name="location">
-    <item>BlockK</item>
+    <item>Block K</item>
     <item>BlockV</item>
 </string-array>
+
+
 
 </resources>

@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.navView.setupWithNavController(navController)
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.homeFragment, R.id.compoundFragment, R.id.notificationFragment)
+            setOf(R.id.homeFragment, R.id.compoundFragment, R.id.notificationFragment,R.id.profileFragment)
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
 //        nav.navigate(R.id.compoundInsert)

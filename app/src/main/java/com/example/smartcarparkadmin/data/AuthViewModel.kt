@@ -33,6 +33,7 @@ class AuthViewModel : ViewModel() {
 
     private val userLiveData = MutableLiveData<Admin?>()
     private var listener: ListenerRegistration? = null
+    var adminid = ""
     private var db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
 
@@ -57,10 +58,6 @@ class AuthViewModel : ViewModel() {
         return userLiveData.value
     }
 
-    fun getStudent(): Admin? {
-        return userLiveData.value
-    }
-
 
     // TODO(1): Login
     // TODO(1): Login
@@ -80,9 +77,9 @@ class AuthViewModel : ViewModel() {
         listener?.remove()
         listener = ADMIN.document(admin.id).addSnapshotListener { doc, _ ->
             userLiveData.value = doc?.toObject()
+
         }
-
-
+        adminid = admin.toString()
         if (remember) {
             getPreferences(ctx)
                 .edit()
@@ -91,11 +88,8 @@ class AuthViewModel : ViewModel() {
                 .apply()
         }
 
-
         // TODO(1B): Setup snapshot listener
         //           Update live data -> user
-
-
         //if(user.id != null) {
         // listener = USERS.document(user.id).addSnapshotListener { doc, _ ->
         //   userLiveData.value = doc?.toObject()

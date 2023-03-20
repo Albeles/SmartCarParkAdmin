@@ -27,9 +27,9 @@ class SuspensionAdapter (
     override fun onBindViewHolder(holder: ViewHolders, position: Int) {
         val notificationlist = getItem(position)
 
-        holder.binding.Tcarplate.text = notificationlist.carPlate.toString()
-        holder.binding.Tname.text = notificationlist.name
-        holder.binding.Tsstatus.text = notificationlist.status
+        holder.binding.ucarplate.text = notificationlist.carPlate.toString()
+        holder.binding.uname.text = notificationlist.name
+        holder.binding.usstatus.text = notificationlist.status
 
         fn(holder, notificationlist)
 

@@ -29,18 +29,18 @@ class CompoundFragment : Fragment() {
         binding = CompoundBinding.inflate(inflater, container, false)
         binding.issueCompound.setOnClickListener { compound() }
         binding.CompoundList.setOnClickListener { comlist() }
-
-
+        binding.SuspensionList.setOnClickListener { suslist() }
         return binding.root
     }
     private fun compound(){
         nav.navigate(R.id.compoundInsert)
-
     }
 
     private fun comlist(){
         nav.navigate(R.id.compoundListFragment)
-
+    }
+    private fun suslist(){
+        nav.navigate(R.id.suspensionFragment)
     }
 
 

@@ -39,7 +39,8 @@ data class Admin (
     var adminEmail: String = "",
     var password: String = "",
     var name    : String = "",
-    var photo   : Blob   = Blob.fromBytes(ByteArray(0)),
+    var phoneNo : String = ""
+
 )
 
 data class Compounds (
@@ -63,9 +64,20 @@ data class Notification (
 
     )
 
+data class uNotification (
+    @DocumentId
+    var id:String="",
+    var date: java.util.Date = Date(),
+    var title: String = "",
+    var desc: String = "",
+
+
+    )
+
 val ADMIN = Firebase.firestore.collection("admin")
 val USERS = Firebase.firestore.collection("users")
 val COMPOUND = Firebase.firestore.collection("compound")
+val UNO = Firebase.firestore.collection("notifications")
 
 fun RESTORE_USERS(ctx: Context) {
     // (1) DELETE users
@@ -78,7 +90,7 @@ fun RESTORE_USERS(ctx: Context) {
             adminEmail = "admin1@gmail.com",
             password = "password",
             name     = "Yeoh Wei Liang",
-            photo    = BitmapFactory.decodeResource(ctx.resources, R.drawable.jieun).toBlob(),
+
         )
 
         USERS.document().set(admin1)
@@ -86,7 +98,7 @@ fun RESTORE_USERS(ctx: Context) {
             adminEmail = "admin2@gmail.com",
             password = "password",
             name     = "Lum Chun Hong",
-            photo    = BitmapFactory.decodeResource(ctx.resources, R.drawable.jieun).toBlob(),
+
         )
         USERS.document().set(admin2)
 

@@ -37,12 +37,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:placeholderTextColor="@color/tarblue"
-        app:startIconDrawable="@mipmap/ic_mails_foreground"
-        app:startIconTint="@color/tarblue">
+        app:placeholderTextColor="@color/tarblue">
+<!--        app:startIconDrawable="@mipmap/ic_mails_foreground"-->
+<!--        app:startIconTint="@color/tarblue">-->
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:id="@+id/ucarplate"
+            android:paddingLeft="20dp"
+            android:editable="false"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
@@ -58,7 +60,7 @@
         android:layout_height="70dp"
         android:layout_marginTop="40dp"
         android:background="@null"
-        android:hint="@string/platenumber"
+        android:hint="@string/amount"
         android:textColor="@color/tarblue"
         android:textColorHint="@color/tarblue"
         app:boxBackgroundColor="@color/white"
@@ -75,15 +77,17 @@
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ucarplates"
-        app:placeholderTextColor="@color/tarblue"
-        app:startIconDrawable="@mipmap/ic_mails_foreground"
-        app:startIconTint="@color/tarblue">
+        app:placeholderTextColor="@color/tarblue">
+<!--        app:startIconDrawable="@mipmap/ic_mails_foreground"-->
+<!--        app:startIconTint="@color/tarblue">-->
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:id="@+id/uamounts"
+            android:paddingLeft="20dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contextClickable="false"
+            android:editable="false"
              />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -96,7 +100,7 @@
         android:layout_height="70dp"
         android:layout_marginTop="40dp"
         android:background="@null"
-        android:hint="@string/platenumber"
+        android:hint="Date"
         android:textColor="@color/tarblue"
         android:textColorHint="@color/tarblue"
         app:boxBackgroundColor="@color/white"
@@ -113,12 +117,13 @@
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/uamount"
-        app:placeholderTextColor="@color/tarblue"
-        app:startIconDrawable="@mipmap/ic_mails_foreground"
-        app:startIconTint="@color/tarblue">
+        app:placeholderTextColor="@color/tarblue">
+<!--        app:startIconDrawable="@mipmap/ic_mails_foreground"-->
+<!--        app:startIconTint="@color/tarblue">-->
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:id="@+id/date"
+            android:paddingLeft="20dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contextClickable="false"
@@ -134,7 +139,7 @@
         android:layout_height="70dp"
         android:layout_marginTop="40dp"
         android:background="@null"
-        android:hint="@string/platenumber"
+        android:hint="@string/locations"
         android:textColor="@color/tarblue"
         android:textColorHint="@color/tarblue"
         app:boxBackgroundColor="@color/white"
@@ -151,30 +156,58 @@
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dates"
-        app:placeholderTextColor="@color/tarblue"
-        app:startIconDrawable="@mipmap/ic_mails_foreground"
-        app:startIconTint="@color/tarblue">
+        app:placeholderTextColor="@color/tarblue">
+<!--        app:startIconDrawable="@mipmap/ic_mails_foreground"-->
+<!--        app:startIconTint="@color/tarblue">-->
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:id="@+id/ulocate"
             android:layout_width="match_parent"
+            android:paddingLeft="20dp"
             android:layout_height="match_parent"
             android:contextClickable="false"
             android:editable="false" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Spinner
+    <com.google.android.material.textfield.TextInputLayout
+
         android:id="@+id/ustatus"
+        style="?attr/textInputOutlinedStyle"
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:layout_marginTop="40dp"
-        android:entries="@array/location"
-        android:labelFor="@id/carplates"
+        android:background="@null"
+        android:hint="@string/status"
+        android:textColor="@color/tarblue"
+        android:textColorHint="@color/tarblue"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeWidth="2dp"
+        app:helperTextTextAppearance="@string/platenumber"
+        app:helperTextTextColor="@color/tarblue"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/tarblue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ulocations" />
+        app:layout_constraintTop_toBottomOf="@+id/ulocations"
+        app:placeholderTextColor="@color/tarblue">
+        <!--        app:startIconDrawable="@mipmap/ic_mails_foreground"-->
+        <!--        app:startIconTint="@color/tarblue">-->
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/ustatuss"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contextClickable="false"
+            android:editable="false"
+            android:paddingLeft="20dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/compoundsubmits"
@@ -184,7 +217,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="40dp"
         android:backgroundTint="@color/tarblue"
-        android:text="@string/issue"
+        android:text="Delete"
         android:textColor="@color/white"
         app:cornerRadius="20dp"
         app:layout_constraintStart_toStartOf="parent"

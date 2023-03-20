@@ -57,7 +57,7 @@ class CompoundListFragment : Fragment() {
             }
         })
 
-        binding.addNo.setOnClickListener { sort("name") }
+        binding.addNo.setOnClickListener { sort("date") }
         binding.btnDesc.setOnClickListener { sort("carplate") }
 
         return binding.root

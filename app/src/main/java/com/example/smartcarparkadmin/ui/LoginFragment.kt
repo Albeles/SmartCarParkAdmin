@@ -48,7 +48,6 @@ class LoginFragment : Fragment() {
             val success = auth.login(ctx,email,password,remember)
             if (success) {
                 nav.popBackStack(R.id.compoundFragment, false)
-                nav.navigateUp()
             }else
             {
                 errorDialog("Invalid credentials")

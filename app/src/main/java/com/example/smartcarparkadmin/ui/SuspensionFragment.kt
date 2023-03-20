@@ -15,4 +15,34 @@ import com.example.smartcarparkadmin.databinding.SuspensionBinding
 import com.example.smartcarparkadmin.util.SuspensionAdapter
 
 class SuspensionFragment : Fragment() {
+    private lateinit var binding: SuspensionBinding
+    private val nav by lazy { findNavController() }
+    private val cv: SuspensionViewMode by activityViewModels()
+
+    private lateinit var adapter: SuspensionAdapter
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        binding = SuspensionBinding.inflate(inflater, container, false)
+//        binding.issueCompound.setOnClickListener { compound() }
+
+//        cv.search("")
+//        sort("date")
+
+        adapter = SuspensionAdapter { holder, comps ->
+            // Item click -> navigate to UpdateFragment (id)
+
+            // Delete button click -> delete record
+//            holder.binding.btnDelete.setOnClickListener {
+//                delete(post.id)
+//            }
+        }
+        binding.nrv.adapter = adapter
+        binding.nrv.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
+
+        cv.getU().observe(viewLifecycleOwner) {
+            adapter.submitList(it)
+
+        }
+        cv.search("suspended")
+        return binding.root
+}
 }

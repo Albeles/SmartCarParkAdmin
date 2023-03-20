@@ -46,6 +46,36 @@
         android:name="com.example.smartcarparkadmin.ui.CompoundUpdateFragment"
         android:label="compound_update"
         tools:layout="@layout/compound_update" />
+    <fragment
+        android:id="@+id/suspensionFragment"
+        android:name="com.example.smartcarparkadmin.ui.SuspensionFragment"
+        android:label="suspension"
+        tools:layout="@layout/suspension" />
+    <fragment
+        android:id="@+id/notificationAddFragment"
+        android:name="com.example.smartcarparkadmin.ui.NotificationAddFragment"
+        android:label="notification_add"
+        tools:layout="@layout/notification_add" />
+    <fragment
+        android:id="@+id/parkingLotA"
+        android:name="com.example.smartcarparkadmin.ui.ParkingLotAFragment"
+        android:label="parkinglota"
+        tools:layout="@layout/parkinglota" />
+    <fragment
+        android:id="@+id/parkingLotB"
+        android:name="com.example.smartcarparkadmin.ui.ParkingLotBFragment"
+        android:label="parkinglotb"
+        tools:layout="@layout/parkinglotb" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.smartcarparkadmin.ui.ProfileFragment"
+        android:label="profile"
+        tools:layout="@layout/profile" />
+    <fragment
+        android:id="@+id/announcementFragment"
+        android:name="com.example.smartcarparkadmin.ui.AnnouncementFragment"
+        android:label="announcementlist"
+        tools:layout="@layout/announcementlist" />
 
 
 </navigation>

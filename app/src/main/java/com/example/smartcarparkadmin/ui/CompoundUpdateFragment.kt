@@ -86,13 +86,7 @@ private fun back(){
         var cp = f.carplate
         binding.ucarplate.setText(f.carplate.toString().trim())
         var statuss = f.status
-        if (statuss != "cancel")
-        {
-            binding.ustatus.setSelection(1)
-        }else
-        {
-            binding.ustatus.setSelection(0)
-        }
+
 
         binding.uamounts.setText(f.amount.toString().trim())
 

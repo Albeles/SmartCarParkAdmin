@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="3000dp"
+    tools:context=".ui.NotificationAddFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="90dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/ntitle"
+        style="?attr/textInputOutlinedStyle"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:hint="@string/platenumber"
+        android:textColor="@color/tarblue"
+        android:textColorHint="@color/tarblue"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeWidth="2dp"
+        app:helperTextTextAppearance="@string/platenumber"
+        app:helperTextTextColor="@color/tarblue"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/tarblue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ndesc"
+        app:placeholderTextColor="@color/tarblue"
+        >
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/ntitles"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="20dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/compoundsubmit"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/submit"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ntitle" />
+
+    <Button
+        android:id="@+id/ComBack"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+
+        android:layout_marginEnd="80dp"
+        android:text="@string/back"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ntitle" />
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/ndesc"
+        style="?attr/textInputOutlinedStyle"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="80dp"
+        android:background="@null"
+        android:hint="@string/platenumber"
+        android:textColor="@color/tarblue"
+        android:textColorHint="@color/tarblue"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeWidth="2dp"
+        app:helperTextTextAppearance="@string/platenumber"
+        app:helperTextTextColor="@color/tarblue"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/tarblue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:placeholderTextColor="@color/tarblue"
+      >
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/ndescs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:includeFontPadding="false"
+            android:paddingStart="20dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
