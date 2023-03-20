@@ -105,7 +105,7 @@ class CompoundViewModel : ViewModel(){
 
         var ccount = users.compoundCount.toInt()
         comcount = ccount
-        
+
         var status = "suspended"
             if (ccount == 2){
                 ccount+=1
