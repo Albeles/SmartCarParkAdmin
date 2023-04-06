@@ -13,7 +13,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.smartcarparkadmin.R
 import com.example.smartcarparkadmin.data.AuthViewModel
 import com.example.smartcarparkadmin.data.Compounds
-import com.example.smartcarparkadmin.data.User
+import com.example.smartcarparkadmin.data.Users
 import com.example.smartcarparkadmin.databinding.NotificationAddBinding
 import com.example.smartcarparkadmin.util.errorDialog
 import com.example.smartcarparkadmin.util.hideKeyboard

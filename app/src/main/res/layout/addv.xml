@@ -3,26 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="3000dp"
-    tools:context=".ui.CompoundInsert"
-    >
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="90dp" />
+    android:layout_height="match_parent"
+    tools:context=".ui.AddVisitorFragment">
 
     <com.google.android.material.textfield.TextInputLayout
 
-        android:id="@+id/carplates"
+        android:id="@+id/name"
         style="?attr/textInputOutlinedStyle"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginTop="80dp"
         android:background="@null"
-        android:hint="@string/platenumber"
+        android:hint="Enter Car Plate Number"
         android:textColor="@color/tarblue"
         android:textColorHint="@color/tarblue"
         app:boxBackgroundColor="@color/white"
@@ -39,25 +31,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:placeholderTextColor="@color/tarblue"
-        app:startIconDrawable="@mipmap/ic_mails_foreground"
-        app:startIconTint="@color/tarblue">
+        >
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
-            android:id="@+id/carplate"
+            android:id="@+id/names"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:paddingStart="20dp"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
 
-        android:id="@+id/carplatess"
+        android:id="@+id/adminEmail"
         style="?attr/textInputOutlinedStyle"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginTop="20dp"
         android:background="@null"
-        android:hint="@string/location"
+        android:hint="Enter IC Number"
         android:textColor="@color/tarblue"
         android:textColorHint="@color/tarblue"
         app:boxBackgroundColor="@color/white"
@@ -72,41 +64,77 @@
         app:hintTextColor="@color/tarblue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/carplates"
+        app:layout_constraintTop_toBottomOf="@+id/name"
         app:placeholderTextColor="@color/tarblue"
-        app:startIconTint="@color/tarblue">
+        >
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
-            android:id="@+id/carplatesss"
-            android:text="@string/blockK"
-            android:editable="false"
-            android:paddingStart="20dp"
+            android:id="@+id/adminEmails"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:paddingStart="20dp"/>
+
     </com.google.android.material.textfield.TextInputLayout>
-    <Button
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/contactnum"
+        style="?attr/textInputOutlinedStyle"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:background="@null"
+        android:hint="@string/contactnum"
+        android:textColor="@color/tarblue"
+        android:textColorHint="@color/tarblue"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeWidth="2dp"
+        app:helperTextTextAppearance="@string/platenumber"
+        app:helperTextTextColor="@color/tarblue"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/tarblue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminEmail"
+        app:placeholderTextColor="@color/tarblue"
+        >
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/contactnums"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="20dp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/compoundsubmit"
+        style="@style/ShapeAppearanceOverlay.Material3.Button"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginTop="60dp"
-        android:text="@string/issue"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/add"
         android:textColor="@color/white"
         app:cornerRadius="20dp"
-        app:layout_constraintEnd_toStartOf="@+id/ComBack"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/carplatess" />
+        app:layout_constraintTop_toBottomOf="@+id/contactnum" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/ComBack"
+        style="@style/ShapeAppearanceOverlay.Material3.Button"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginTop="40dp"
 
+        android:layout_marginEnd="60dp"
         android:text="@string/back"
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/carplatess" />
+        app:layout_constraintTop_toBottomOf="@+id/contactnum" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

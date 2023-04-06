@@ -10,9 +10,8 @@ import com.example.smartcarparkadmin.databinding.CompoundlistshowBinding
 import java.text.SimpleDateFormat
 import java.util.Date
 import kotlin.time.Duration.Companion.days
-
+var total = 50
 class CompoundAdapter (
-
     val fn: (ViewHolder, Compounds) -> Unit = { _, _ -> }
     ) : ListAdapter<Compounds, CompoundAdapter.ViewHolder>(DiffCallback) {
 
@@ -29,6 +28,7 @@ class CompoundAdapter (
             return ViewHolder(binding)
         }
 
+
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val compoundlists = getItem(position)
             @SuppressLint("SimpleDateFormat")
@@ -39,6 +39,10 @@ class CompoundAdapter (
             holder.binding.Comdate.text = formattedDate
             holder.binding.carplateNum.text = compoundlists.carplate
             holder.binding.status.text = compoundlists.status
+
+            total =  total + compoundlists.amount
+
+
 
             fn(holder, compoundlists)
         }

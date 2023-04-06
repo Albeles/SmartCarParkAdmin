@@ -1,10 +1,7 @@
 package com.example.smartcarparkadmin.data
 
-import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.SharedPreferences
-import android.media.Image
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -16,16 +13,8 @@ import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.firestore.ktx.toObjects
 import kotlinx.coroutines.tasks.await
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.lifecycle.viewModelScope
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
-import com.example.smartcarparkadmin.R
-import kotlinx.coroutines.launch
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 
 class AuthViewModel : ViewModel() {
@@ -99,10 +88,11 @@ class AuthViewModel : ViewModel() {
 
         return true
     }
+    suspend fun checkemail(ctx: Context,email: String): Boolean {
+        // TODO(1A): Get the user record with matching email + password
+        //           Return false is no matching found
 
-    suspend fun writeNewUser( email: String, name: String,password: String):Boolean {
-
-        val user = ADMIN
+        val users = ADMIN
 
             .whereEqualTo("adminEmail", email)
             .get()
@@ -110,8 +100,76 @@ class AuthViewModel : ViewModel() {
             .toObjects<Admin>()
             .firstOrNull() ?: return false
 
-        db.collection("admin").document(user.id).update("name",name,"password",password)
 
+        return true
+    }
+
+    suspend fun checkRole(ctx: Context,email: String): Any {
+        // TODO(1A): Get the user record with matching email + password
+        //           Return false is no matching found
+        var role ="Admin"
+        val users = ADMIN
+
+            .whereEqualTo("adminEmail", email)
+            .get()
+            .await()
+            .toObjects<Admin>()
+            .firstOrNull() ?: return false
+
+//        if(users.status.toString()==""){
+            role = users.role
+//        }
+
+        role ="Admin"
+        return role
+    }
+    suspend fun addProfile( adminEmail: String,name:String,password: String,phone:String):Boolean {
+
+
+
+        val l = Admin(
+            id = "",
+            adminEmail = adminEmail,
+            name =name,
+            password = password,
+            phoneNo = phone
+
+        )
+        validate(l,false)
+
+        Firebase.firestore
+            .collection("admin")
+            .document()
+            .set(l)
+
+
+        return true
+    }
+
+    suspend fun updateUser(adminEmail: String, name:String, password: String, phone:String):Boolean {
+
+        val user = ADMIN
+
+            .whereEqualTo("adminEmail", adminEmail)
+            .get()
+            .await()
+            .toObjects<Admin>()
+            .firstOrNull() ?: return false
+
+        val l = Admin(
+
+            id = user.id,
+            adminEmail = adminEmail,
+            name =name,
+            password = password,
+            phoneNo = phone
+
+        )
+
+        Firebase.firestore
+            .collection("admin")
+            .document(user.id)
+            .set(l)
 
         return true
     }
@@ -160,6 +218,27 @@ class AuthViewModel : ViewModel() {
         if(email != null && password != null){
             login(ctx,email,password)
         }
+    }
+    fun validate(f: Admin, insert: Boolean = true): String {
+        val regexId = Regex("""^[A-Z]\d{3}$""")
+        var e = ""
+
+//        if (insert) {
+//            e += if (f.id == "") "- Id is required.\n"
+//            else if (!f.id.matches(regexId)) "- Id format is invalid (format: X999).\n"
+//            else if (idExists(f.id)) "- Id is duplicated.\n"
+//            else ""
+//        }
+
+        e += if (f.adminEmail == "") "- Admin Email is required.\n"
+        else if (f.adminEmail.length < 10) "- Car plate number is too long (no more than 10 letters).\n"
+
+        else ""
+
+        //     e += if (f.photo.toBytes().isEmpty()) "- Photo is required.\n"
+        //    else ""
+
+        return e
     }
 
 

@@ -9,10 +9,10 @@
 
     <Button
         android:id="@+id/parkinglota"
-        android:layout_width="270dp"
+        android:layout_width="320dp"
         android:layout_height="65dp"
         android:layout_marginTop="150dp"
-        android:text="@string/parkinglotaa"
+        android:text="Parking Area Block K"
         android:textAllCaps="false"
         android:textSize="24sp"
         app:cornerRadius="20dp"
@@ -22,10 +22,10 @@
 
     <Button
         android:id="@+id/parkinglotb"
-        android:layout_width="270dp"
+        android:layout_width="320dp"
         android:layout_height="65dp"
         android:layout_marginTop="100dp"
-        android:text="@string/parkinglotbb"
+        android:text="Parking Area Block V"
         android:textAllCaps="false"
         android:textSize="24sp"
         app:cornerRadius="20dp"

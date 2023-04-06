@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.AnnouncementEditFragment">
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/dates"
+        style="?attr/textInputOutlinedStyle"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:hint="@string/titles"
+        android:textColor="@color/tarblue"
+        android:textColorHint="@color/tarblue"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeWidth="2dp"
+        app:helperTextTextAppearance="@string/platenumber"
+        app:helperTextTextColor="@color/tarblue"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/tarblue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:placeholderTextColor="@color/tarblue">
+        <!--        app:startIconDrawable="@mipmap/ic_mails_foreground"-->
+        <!--        app:startIconTint="@color/tarblue">-->
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/titles"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contextClickable="false"
+
+            android:paddingLeft="20dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/ulocations"
+        style="?attr/textInputOutlinedStyle"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:hint="@string/date"
+        android:textColor="@color/tarblue"
+        android:textColorHint="@color/tarblue"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeWidth="2dp"
+        app:helperTextTextAppearance="@string/platenumber"
+        app:helperTextTextColor="@color/tarblue"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/tarblue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dates"
+        app:placeholderTextColor="@color/tarblue">
+        <!--        app:startIconDrawable="@mipmap/ic_mails_foreground"-->
+        <!--        app:startIconTint="@color/tarblue">-->
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/udates"
+            android:layout_width="match_parent"
+            android:paddingLeft="20dp"
+            android:layout_height="match_parent"
+            android:contextClickable="false"
+            android:editable="false" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/ustatus"
+        style="?attr/textInputOutlinedStyle"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:hint="@string/descriptions"
+        android:textColor="@color/tarblue"
+        android:textColorHint="@color/tarblue"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeWidth="2dp"
+        app:helperTextTextAppearance="@string/platenumber"
+        app:helperTextTextColor="@color/tarblue"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/tarblue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ulocations"
+        app:placeholderTextColor="@color/tarblue">
+        <!--        app:startIconDrawable="@mipmap/ic_mails_foreground"-->
+        <!--        app:startIconTint="@color/tarblue">-->
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/ustatuss"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contextClickable="false"
+            android:paddingLeft="20dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/compoundsubmits"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/tarblue"
+        android:text="@string/update"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ustatus" />
+
+    <Button
+        android:id="@+id/ComBack"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="80dp"
+        android:text="@string/back"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ustatus" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

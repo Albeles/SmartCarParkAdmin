@@ -10,11 +10,13 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObjects
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
 import java.util.*
 
 class AnnouncementViewModel : ViewModel(){
     private var listener: ListenerRegistration? = null
     private var noList = listOf<uNotification>()
+    private val nodata = MutableLiveData<uNotification?>()
     private var db: FirebaseFirestore = FirebaseFirestore.getInstance()
     private val nomlist = MutableLiveData<List<uNotification>>()
     private val uno = Firebase.firestore.collection("notifications")
@@ -38,6 +40,10 @@ class AnnouncementViewModel : ViewModel(){
             }
         }
     }
+    fun getanno(id: String) = nomlist.value?.find { it.id == id }
+    fun getNos(): uNotification? {
+        return nodata.value
+    }
 
     fun getNo() = nomlist // live data
 
@@ -52,6 +58,34 @@ class AnnouncementViewModel : ViewModel(){
             .collection("notifications")
             .document()
             .set(l)
+    }
+
+    suspend fun updateNo(id:String,Title: String, Desc:String, date:Date):Boolean {
+
+        val noti = uno
+
+            .whereEqualTo("id", id)
+            .get()
+            .await()
+            .toObjects<Admin>()
+            .firstOrNull() ?: return false
+
+        val l = uNotification(
+
+            id = uno.id,
+           title = Title,
+            desc = Desc,
+            date = date,
+
+
+        )
+
+        Firebase.firestore
+            .collection("notifications")
+            .document(uno.id)
+            .set(l)
+
+        return true
     }
 
     private fun updateResult() {

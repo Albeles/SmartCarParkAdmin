@@ -12,7 +12,6 @@ import com.example.smartcarparkadmin.data.CompoundViewModel
 import com.example.smartcarparkadmin.util.CompoundAdapter
 import com.example.smartcarparkadmin.databinding.CompoundBinding
 import com.example.smartcarparkadmin.databinding.CompoundInsertBinding
-import com.example.smartcarparkadmin.databinding.HeaderLoginBinding
 import com.example.smartcarparkadmin.util.setImageBlob
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
@@ -27,10 +26,17 @@ class CompoundFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = CompoundBinding.inflate(inflater, container, false)
-        binding.issueCompound.setOnClickListener { compound() }
+
         binding.CompoundList.setOnClickListener { comlist() }
         binding.SuspensionList.setOnClickListener { suslist() }
+        binding.addvisitor.setOnClickListener { addV() }
+        binding.editvisitor.setOnClickListener { editV() }
+
+        binding.issueCompound.setOnClickListener { report() }
         return binding.root
+    }
+    private fun report(){
+        nav.navigate(R.id.report)
     }
     private fun compound(){
         nav.navigate(R.id.compoundInsert)
@@ -41,6 +47,14 @@ class CompoundFragment : Fragment() {
     }
     private fun suslist(){
         nav.navigate(R.id.suspensionFragment)
+    }
+
+    private fun addV(){
+        nav.navigate(R.id.addVisitor)
+    }
+
+    private fun editV(){
+        nav.navigate(R.id.visitor)
     }
 
 

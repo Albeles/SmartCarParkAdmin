@@ -1,33 +1,26 @@
 package com.example.smartcarparkadmin
-import android.content.Intent
-import androidx.activity.viewModels
-import androidx.fragment.app.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
-import androidx.lifecycle.Observer
-import androidx.lifecycle.lifecycleScope
+import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.NavHostFragment
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.smartcarparkadmin.ui.LoginFragment
-import com.example.smartcarparkadmin.data.Admin
 import com.example.smartcarparkadmin.data.AuthViewModel
 import com.example.smartcarparkadmin.databinding.ActivityMainBinding
-import com.example.smartcarparkadmin.databinding.HeaderLoginBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.example.smartcarparkadmin.util.setImageBlob
-import com.google.android.material.navigation.NavigationBarView
-import kotlinx.coroutines.launch
+import com.example.smartcarparkadmin.databinding.LoginBinding
+import com.example.smartcarparkadmin.ui.IOnBackPressed
+
 
 class MainActivity : AppCompatActivity() {
+
 
 
     private val nav by lazy { supportFragmentManager.findFragmentById(R.id.nav_host_container)!!.findNavController() }
@@ -35,18 +28,37 @@ class MainActivity : AppCompatActivity() {
     private val auth: AuthViewModel by viewModels()
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private var pressedTime: Long = 0
+
+//      fun onBackPressed() {
+//        val count = supportFragmentManager.backStackEntryCount
+//
+//        if (count >= 3) {
+//
+//            System.exit(0)
+//            //additional code
+//        } else {
+//            supportFragmentManager.popBackStack()
+//        }
+//    }
+
 
 
    // private lateinit var abc: AppBarConfiguration
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
 
-       // binding.navView.visibility= View.INVISIBLE
-        binding.navView.visibility= View.VISIBLE
+        supportActionBar?.hide()
+        binding.navView.visibility= View.INVISIBLE
+
 
         val navHostFragment = supportFragmentManager.findFragmentById(
             R.id.nav_host_container
@@ -54,6 +66,9 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
 
         binding.navView.setupWithNavController(navController)
+
+
+
         appBarConfiguration = AppBarConfiguration(
             setOf(R.id.homeFragment, R.id.compoundFragment, R.id.notificationFragment,R.id.profileFragment)
         )
@@ -96,6 +111,12 @@ class MainActivity : AppCompatActivity() {
 
             // TODO(5B): Inflate menu + header (based on login status)
             if (manager == null) {
+                supportActionBar?.hide()
+                binding.navView.visibility= View.INVISIBLE
+                binding.welcomes.text = ""
+                onBackPressed()
+
+
                 //  binding.navView.inflateMenu(R.menu.bottom_nav)
                 //  binding.navView.inflateHeaderView(R.layout.header)
                 //    nav.popBackStack(R.id.homeFragment, true)
@@ -103,11 +124,20 @@ class MainActivity : AppCompatActivity() {
                 //      nav.navigateUp()
             } else {
 
-//                binding.navView.inflateMenu(R.menu.bottom_nav)
+                binding.welcomes.text = "Welcome ! " + manager.name
+
+                supportActionBar?.show()
+
+                binding.navView.visibility= View.VISIBLE
+
+//                val profile = auth.getUser()
+//                if (profile != null) {
+//                    bindings.welcomes.text = profile.name.toString()
+//
+//                }
+            //                binding.navView.inflateMenu(R.menu.bottom_nav)
                 // binding.navView.inflateMenu(R.menu.drawer_login)
                 //  binding.navView.inflateHeaderView((R.layout.header_login))
-
-
                 // setHeader(manager)
             }
         }
@@ -143,7 +173,19 @@ class MainActivity : AppCompatActivity() {
 //        return true
 //    }
 
+
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-}
+
+//    @Deprecated("Deprecated in Java")
+//    override fun onBackPressed() {
+//        val fragment =
+//            this.supportFragmentManager.findFragmentById(R.id.nav_host_container)
+//        (fragment as? IOnBackPressed)?.onBackPressed()?.not()?.let {
+//            super.onBackPressed()
+//        }
+//    }
+
+
+    }

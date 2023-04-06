@@ -21,13 +21,12 @@ import java.util.*
 
 class CompoundViewModel : ViewModel(){
 
-    private val usersLiveData = MutableLiveData<User?>()
+    private val usersLiveData = MutableLiveData<Users?>()
     private val compLiveData = MutableLiveData<List<Compounds>>()
-    private val compdata = MutableLiveData<Compounds?>()
     private var listener: ListenerRegistration? = null
     private var compList = listOf<Compounds>()
     private var db: FirebaseFirestore = FirebaseFirestore.getInstance()
-    private val users = MutableLiveData<List<User>>()
+    private val users = MutableLiveData<List<Users>>()
     private val col = Firebase.firestore.collection("compounds")
     private var tamount = 50
     private var comcount = 0
@@ -42,15 +41,15 @@ class CompoundViewModel : ViewModel(){
 
     }
 
-    fun getCarPlateLiveData(): LiveData<User?> {
+    fun getCarPlateLiveData(): LiveData<Users?> {
         return usersLiveData
     }
 
-    fun getUser(): User? {
+    fun getUser(): Users? {
         return usersLiveData.value
     }
 
-    fun getStudent(): User? {
+    fun getStudent(): Users? {
         return usersLiveData.value
     }
     suspend fun checkUser(ctx: Context,carplate: String): Boolean {
@@ -62,17 +61,46 @@ class CompoundViewModel : ViewModel(){
             .whereEqualTo("carPlate", carplate)
             .get()
             .await()
-            .toObjects<User>()
+            .toObjects<Users>()
+            .firstOrNull() ?: return false
+
+        return true
+    }
+
+    suspend fun checkUser2(ctx: Context,carplate: String,statuss:String): Boolean {
+        // TODO(1A): Get the user record with matching email + password
+        //           Return false is no matching found
+        val compound = COMPOUND
+
+
+
+            .whereEqualTo("carplate", carplate)
+            .whereEqualTo("status",statuss)
+            .get()
+            .await()
+            .toObjects<Compounds>()
             .firstOrNull() ?: return false
 
 
         return true
-        }
 
-    suspend fun addCompound( carplate: String,location:String):Boolean {
+    }
+
+    suspend fun addCompound( carplate: String,location:String,adminName:String):Boolean {
         val calendar = Calendar.getInstance()
 
-            tamount=50
+        tamount=50
+
+        val users = USERS
+            .whereEqualTo("carPlate", carplate)
+            .get()
+            .await()
+            .toObjects<Users>()
+            .firstOrNull() ?: return false
+
+            if(users.compoundCount >= 3){
+                tamount=150
+            }
 
         val l = Compounds(
             id= "",
@@ -80,8 +108,8 @@ class CompoundViewModel : ViewModel(){
             date = Date(),
             status = "Pending",
             carplate = carplate.toString().trim(),
-            location = location
-
+            location = location,
+            aName = adminName
             )
         Firebase.firestore
             .collection("compounds")
@@ -99,7 +127,7 @@ class CompoundViewModel : ViewModel(){
             .whereEqualTo("carPlate", carplate)
             .get()
             .await()
-            .toObjects<User>()
+            .toObjects<Users>()
             .firstOrNull() ?: return false
 
 
@@ -107,12 +135,17 @@ class CompoundViewModel : ViewModel(){
         comcount = ccount
 
         var status = "suspended"
-            if (ccount == 2){
+        var statuss = "barred"
+            if (ccount in 2..4){
                 ccount+=1
                 db.collection("users").document(users.id).update("compoundCount",ccount.toInt(),"status",status.toString())
-            }else{
+            }else if(ccount ==5){
                 ccount+=1
-                db.collection("users").document(users.id).update("compoundCount",ccount.toInt())
+                db.collection("users").document(users.id).update("compoundCount",ccount.toInt(),"status",statuss.toString())
+
+            }else{
+            ccount+=1
+            db.collection("users").document(users.id).update("compoundCount",ccount.toInt())
             }
 
 
@@ -128,14 +161,14 @@ class CompoundViewModel : ViewModel(){
             .whereEqualTo("carPlate", carplate)
             .get()
             .await()
-            .toObjects<User>()
+            .toObjects<Users>()
             .firstOrNull() ?: return false
 
 
         var ccount = users.compoundCount.toInt()
         comcount = ccount
         var status = "Active"
-        if (ccount == 3){
+        if (ccount >= 3){
             ccount-=1
             db.collection("users").document(users.id).update("compoundCount",ccount.toInt(),"status",status.toString())
         }else{
@@ -156,7 +189,7 @@ class CompoundViewModel : ViewModel(){
             .whereEqualTo("carPlate", carplates)
             .get()
             .await()
-            .toObjects<User>()
+            .toObjects<Users>()
             .firstOrNull() ?: return false
 
         var ccount = users.compoundCount.toInt()
@@ -196,6 +229,7 @@ class CompoundViewModel : ViewModel(){
             col.addSnapshotListener { value, _ ->
                 if (value == null) return@addSnapshotListener
                 compList = value.toObjects<Compounds>()
+
                 updateResult()
             }
         }
@@ -205,9 +239,14 @@ class CompoundViewModel : ViewModel(){
     fun get(id: String) = users.value?.find { it.id == id }
 
     fun gets(id: String) = compLiveData.value?.find { it.id == id }
+
+    fun getcom() = compLiveData.value?.forEach{col.document().get()}
+
     fun getAll() = usersLiveData // live data
 
     fun getComp() = compLiveData // live data
+
+    fun getEx() = compList
 
     fun delete(id: String) {
         col.document(id).delete()
@@ -225,7 +264,7 @@ class CompoundViewModel : ViewModel(){
         col.document(f.id).set(f)
     }
 
-    fun sets(u: User) {
+    fun sets(u: Users) {
         col.document(u.id).set(u)
     }
 

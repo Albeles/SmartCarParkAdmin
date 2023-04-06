@@ -1,55 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    tools:context=".ui.SuspentionUpdateFragment"
+   >
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.CompoundUpdateFragment">
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="90dp" />
-
-    <com.google.android.material.textfield.TextInputLayout
-
-        android:id="@+id/ucarplates"
-        style="?attr/textInputOutlinedStyle"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="20dp"
-        android:background="@null"
-        android:hint="@string/platenumber"
-        android:textColor="@color/tarblue"
-        android:textColorHint="@color/tarblue"
-        app:boxBackgroundColor="@color/white"
-        app:boxCornerRadiusBottomEnd="20dp"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
-        app:boxStrokeWidth="2dp"
-        app:helperTextTextAppearance="@string/platenumber"
-        app:helperTextTextColor="@color/tarblue"
-        app:hintEnabled="true"
-        app:hintTextColor="@color/tarblue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/uname"
-        app:placeholderTextColor="@color/tarblue">
-        <!--        app:startIconDrawable="@mipmap/ic_mails_foreground"-->
-        <!--        app:startIconTint="@color/tarblue">-->
-
-        <com.google.android.material.textfield.MaterialAutoCompleteTextView
-            android:id="@+id/ucarplate"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:editable="false"
-            android:paddingLeft="20dp"
-
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+    android:layout_height="800dp"
+    tools:context=".ui.SuspentionUpdateFragment">
 
     <com.google.android.material.textfield.TextInputLayout
 
@@ -57,48 +20,9 @@
         style="?attr/textInputOutlinedStyle"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         android:background="@null"
         android:hint="Name"
-        android:textColor="@color/tarblue"
-        android:textColorHint="@color/tarblue"
-        app:boxBackgroundColor="@color/white"
-        app:boxCornerRadiusBottomEnd="20dp"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
-        app:boxStrokeWidth="2dp"
-        app:helperTextTextAppearance="@string/platenumber"
-        app:helperTextTextColor="@color/tarblue"
-        app:hintEnabled="true"
-        app:hintTextColor="@color/tarblue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:placeholderTextColor="@color/tarblue">
-        <!--        app:startIconDrawable="@mipmap/ic_mails_foreground"-->
-        <!--        app:startIconTint="@color/tarblue">-->
-
-        <com.google.android.material.textfield.MaterialAutoCompleteTextView
-            android:id="@+id/unames"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:editable="false"
-            android:paddingLeft="20dp"
-
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-
-        android:id="@+id/uamount"
-        style="?attr/textInputOutlinedStyle"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="20dp"
-        android:background="@null"
-        android:hint="@string/amount"
         android:textColor="@color/tarblue"
         android:textColorHint="@color/tarblue"
         app:boxBackgroundColor="@color/white"
@@ -120,7 +44,7 @@
         <!--        app:startIconTint="@color/tarblue">-->
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
-            android:id="@+id/uamounts"
+            android:id="@+id/unames"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contextClickable="false"
@@ -131,13 +55,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
 
-        android:id="@+id/dates"
+        android:id="@+id/emails"
         style="?attr/textInputOutlinedStyle"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginTop="25dp"
         android:background="@null"
-        android:hint="Date"
+        android:hint="Email"
         android:textColor="@color/tarblue"
         android:textColorHint="@color/tarblue"
         app:boxBackgroundColor="@color/white"
@@ -153,13 +77,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/uamount"
+        app:layout_constraintTop_toBottomOf="@+id/uname"
         app:placeholderTextColor="@color/tarblue">
         <!--        app:startIconDrawable="@mipmap/ic_mails_foreground"-->
         <!--        app:startIconTint="@color/tarblue">-->
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
-            android:id="@+id/date"
+            android:id="@+id/emailss"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contextClickable="false"
@@ -168,15 +92,29 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <Button
+        android:id="@+id/compoundsubmits2"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/tarblue"
+        android:text="Change"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cc" />
+
     <com.google.android.material.textfield.TextInputLayout
 
-        android:id="@+id/ulocations"
+        android:id="@+id/contactnumss"
         style="?attr/textInputOutlinedStyle"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginTop="25dp"
         android:background="@null"
-        android:hint="@string/locations"
+        android:hint="Contact Number"
         android:textColor="@color/tarblue"
         android:textColorHint="@color/tarblue"
         app:boxBackgroundColor="@color/white"
@@ -192,13 +130,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dates"
+        app:layout_constraintTop_toBottomOf="@+id/emails"
         app:placeholderTextColor="@color/tarblue">
         <!--        app:startIconDrawable="@mipmap/ic_mails_foreground"-->
         <!--        app:startIconTint="@color/tarblue">-->
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
-            android:id="@+id/ulocate"
+            android:id="@+id/contactnumssss"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contextClickable="false"
@@ -206,6 +144,17 @@
             android:paddingLeft="20dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/comBack"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="80dp"
+        android:text="@string/back"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cc" />
 
     <com.google.android.material.textfield.TextInputLayout
 
@@ -231,7 +180,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ulocations"
+        app:layout_constraintTop_toBottomOf="@+id/contactnumss"
         app:placeholderTextColor="@color/tarblue">
         <!--        app:startIconDrawable="@mipmap/ic_mails_foreground"-->
         <!--        app:startIconTint="@color/tarblue">-->
@@ -246,29 +195,83 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/compoundsubmits"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
+    <com.google.android.material.textfield.TextInputLayout
 
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="@color/tarblue"
-        android:text="Delete"
-        android:textColor="@color/white"
-        app:cornerRadius="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ustatus" />
-
-    <Button
-        android:id="@+id/ComBack"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="80dp"
-        android:text="@string/back"
-        app:cornerRadius="20dp"
+        android:id="@+id/cc"
+        style="?attr/textInputOutlinedStyle"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="25dp"
+        android:background="@null"
+        android:hint="Compound Count"
+        android:textColor="@color/tarblue"
+        android:textColorHint="@color/tarblue"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeWidth="2dp"
+        app:helperTextTextAppearance="@string/platenumber"
+        app:helperTextTextColor="@color/tarblue"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/tarblue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ustatus" />
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ustatus"
+        app:placeholderTextColor="@color/tarblue">
+        <!--        app:startIconDrawable="@mipmap/ic_mails_foreground"-->
+        <!--        app:startIconTint="@color/tarblue">-->
 
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/ccs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contextClickable="false"
+            android:editable="false"
+            android:paddingLeft="20dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/ucarplates"
+        style="?attr/textInputOutlinedStyle"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="60dp"
+        android:background="@null"
+        android:hint="Car Plate Number"
+        android:textColor="@color/tarblue"
+        android:textColorHint="@color/tarblue"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeWidth="2dp"
+        app:helperTextTextAppearance="@string/platenumber"
+        app:helperTextTextColor="@color/tarblue"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/tarblue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:placeholderTextColor="@color/tarblue">
+        <!--        app:startIconDrawable="@mipmap/ic_mails_foreground"-->
+        <!--        app:startIconTint="@color/tarblue">-->
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/ucarplate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:editable="false"
+            android:paddingLeft="20dp"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

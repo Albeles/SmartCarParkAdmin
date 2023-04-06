@@ -14,23 +14,25 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.smartcarparkadmin.R
 import com.example.smartcarparkadmin.data.AuthViewModel
 import com.example.smartcarparkadmin.data.Compounds
+import com.example.smartcarparkadmin.data.Users
+import com.example.smartcarparkadmin.databinding.CompoundInsert2Binding
 import com.example.smartcarparkadmin.util.errorDialog
 import com.example.smartcarparkadmin.util.hideKeyboard
 import kotlinx.coroutines.launch
 
-class CompoundInsert : Fragment(){
-    private lateinit var binding: CompoundInsertBinding
+class CompoundInsertB : Fragment(){
+    private lateinit var binding: CompoundInsert2Binding
     private val nav by lazy { findNavController() }
     private val auths: CompoundViewModel by activityViewModels()
     private val authss: AuthViewModel by activityViewModels()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        binding = CompoundInsertBinding.inflate(inflater, container, false)
+        binding = CompoundInsert2Binding.inflate(inflater, container, false)
 
         binding.compoundsubmit.setOnClickListener{compoundInsert()}
 
 
         return binding.root
-}
+    }
     private fun compoundInsert() {
         hideKeyboard()
 
@@ -40,32 +42,21 @@ class CompoundInsert : Fragment(){
 
         lifecycleScope.launch{
 
-                val status = "Pending"
-                val success = auths.checkUser(ctx,carplate)
 
+            val success = auths.checkUser(ctx,carplate)
             if (success) {
-                val success2 = auths.checkUser2(ctx,carplate,status)
-                if(success2){
-                    errorDialog ("This car haven't pay the previous compound !")
-                    }
-                else {
+                auths.addCC(ctx,carplate)
+                val admin = authss.getUser()
+                var adminName = ""
+                if (admin != null){
+                    adminName = admin.name
 
-                    auths.addCC(ctx, carplate)
-                    val admin = authss.getUser()
-                    var adminName = ""
-                    if (admin != null) {
-                        adminName = admin.name
-
-                        auths.addCompound(carplate, "Block K", adminName)
-                        nav.navigateUp()
-                    }
-                }
-
-
-                }else
-                {
-                    errorDialog("Invalid car plate")
-                }
+                    auths.addCompound(carplate,"Block V",adminName)
+                nav.navigateUp()
+            }else
+            {
+                errorDialog("Invalid car plate")
+            }
 
 
             {
@@ -75,6 +66,7 @@ class CompoundInsert : Fragment(){
 
 
     }
+}
 }
 
 

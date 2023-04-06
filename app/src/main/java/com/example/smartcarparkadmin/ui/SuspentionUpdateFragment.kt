@@ -9,34 +9,33 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.smartcarparkadmin.data.CompoundViewModel
-import com.example.smartcarparkadmin.databinding.CompoundUpdateBinding
-import androidx.navigation.ui.setupWithNavController
-import com.example.smartcarparkadmin.R
-import com.example.smartcarparkadmin.data.AuthViewModel
-import com.example.smartcarparkadmin.data.Compounds
-import com.example.smartcarparkadmin.data.Users
+import com.example.smartcarparkadmin.data.SuspensionViewMode
+import com.example.smartcarparkadmin.databinding.SuspentionupdateBinding
 import com.example.smartcarparkadmin.util.errorDialog
 import com.example.smartcarparkadmin.util.hideKeyboard
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
-import java.util.*
 
-class CompoundUpdateFragment : Fragment(){
-    private lateinit var binding: CompoundUpdateBinding
+
+class SuspentionUpdateFragment: Fragment(){
+    private lateinit var binding: SuspentionupdateBinding
     private val nav by lazy { findNavController() }
-    private val auths: CompoundViewModel by activityViewModels()
-    private val id by lazy { arguments?.getString("id") ?: "" }
-    private val dateFormat=SimpleDateFormat("dd/MM/yyyy")
+    private val auths: SuspensionViewMode by activityViewModels()
+    private val authss: CompoundViewModel by activityViewModels()
+    private val id by lazy { arguments?.getString("carPlate") ?: "" }
+    private val dateFormat= SimpleDateFormat("dd/MM/yyyy")
     private var db: FirebaseFirestore = FirebaseFirestore.getInstance()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        binding = CompoundUpdateBinding.inflate(inflater, container, false)
+        binding = SuspentionupdateBinding.inflate(inflater, container, false)
         reset()
-        binding.compoundsubmits.setOnClickListener{compoundInsert()}
-        binding.ComBack.setOnClickListener{back()}
+        binding.compoundsubmits2.setOnClickListener{compoundInsert()}
+        binding.comBack.setOnClickListener{back()}
 
         return binding.root
     }
+
     private fun compoundInsert() {
         hideKeyboard()
 
@@ -49,10 +48,10 @@ class CompoundUpdateFragment : Fragment(){
 
             val success = auths.checkUser(ctx,carplate)
             if (success) {
-                auths.decreaseCC(ctx,carplate)
+                auths.edituser(ctx,carplate)
 //                db.collection("compounds").document(id).delete()
 //                auths.deleteCt(carplate)
-                nav.navigateUp()
+
             }else
             {
                 errorDialog("Invalid car plate")
@@ -72,31 +71,35 @@ class CompoundUpdateFragment : Fragment(){
 
 
 
-private fun back(){
+    private fun back(){
         nav.navigateUp()
     }
+
     private fun reset() {
 
-        val f = auths.gets(id)
+//        db.collection("users").document("20WBM12387").get()
+//        val f = auths.gets("20WBM12387")
+//        val f = db.collection("users").document("20WBM12387").get().result
+//        val j = f.id
+        val o = auths.gets(id)
 
-        if (f == null) {
+        if (o == null) {
             nav.navigateUp()
             return
         }
-        var cp = f.carplate
-        binding.ucarplate.setText(f.carplate.toString().trim())
-        var statuss = f.status
+        var cp = o.carPlate
+        binding.ucarplate.setText(o.carPlate.toString().trim())
+        var statuss = o.status
 
 
-        binding.uamounts.setText(f.amount.toString().trim())
+        binding.ccs.setText(o.compoundCount.toString().trim())
 
-        binding.date.setText(dateFormat.format(f.date).toString().trim())
+        binding.contactnumssss.setText(o.phoneNo).toString().trim()
 
-        binding.ulocate.setText(f.location.toString().trim())
+        binding.emailss.setText(o.email.toString().trim())
 
-        binding.unames.setText(f.aName.toString())
-        binding.ustatuss.setText(f.status.toString())
+        binding.unames.setText(o.name.toString().trim())
 
-        binding.ustatus.requestFocus()
+        binding.ustatuss.setText(o.status.toString())
     }
 }

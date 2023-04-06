@@ -4,17 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.smartcarparkadmin.R
 import com.example.smartcarparkadmin.data.AnnouncementViewModel
-import com.example.smartcarparkadmin.data.NotificationViewMode
 import com.example.smartcarparkadmin.databinding.AnnouncementlistBinding
 import com.example.smartcarparkadmin.util.AnnouncementAdapter
-import com.example.smartcarparkadmin.util.NotificationAdapter
 
 
 class AnnouncementFragment : Fragment() {
@@ -28,11 +26,11 @@ class AnnouncementFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = AnnouncementlistBinding.inflate(inflater, container, false)
         binding.addNo.setOnClickListener{addNotification()}
-        adapters = AnnouncementAdapter { holder, nomps ->
+        adapters = AnnouncementAdapter { holder, uNotification ->
             // Item click -> navigate to UpdateFragment (id)
-//            holder.binding.btnEdit.setOnClickListener() {
-//                nav.navigate(R.id.compoundUpdateFragment, bundleOf("id" to comps.id,"carplatesss" to comps.carplate))
-//            }
+            holder.binding.btnEdit.setOnClickListener() {
+                nav.navigate(R.id.announcementEditFragment, bundleOf("id" to uNotification.id))
+            }
             // Delete button click -> delete record
 //            holder.binding.btnDelete.setOnClickListener {
 //                delete(post.id)

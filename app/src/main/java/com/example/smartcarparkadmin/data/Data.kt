@@ -1,16 +1,10 @@
 package com.example.smartcarparkadmin.data
 
 import android.content.Context
-import android.graphics.BitmapFactory
-import com.example.smartcarparkadmin.R
-import com.example.smartcarparkadmin.util.toBlob
 import com.google.firebase.firestore.Blob
 import com.google.firebase.firestore.DocumentId
-import com.google.firebase.firestore.PropertyName
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.google.type.Date
-import com.google.type.DateTime
 import java.util.*
 
 data class Post(
@@ -20,26 +14,26 @@ data class Post(
     var photo : Blob = Blob.fromBytes(ByteArray(0)),
 )
 
-data class User(
+data class Users(
     @DocumentId
     var id      : String = "",
     var carPlate : String = "",
     var email   : String = "",
     var name    : String = "",
     var phoneNo : String = "",
-    var studentId : String = "",
     var compoundCount : Int = 0,
     var password : String = "",
     var status : String = ""
     )
 
-data class Admin (
+data class Admin(
     @DocumentId
     var id:String="",
     var adminEmail: String = "",
     var password: String = "",
-    var name    : String = "",
-    var phoneNo : String = ""
+    var name: String = "",
+    var phoneNo: String = "",
+    var role: String = ""
 
 )
 
@@ -50,8 +44,8 @@ data class Compounds (
     var date: java.util.Date = Date(),
     var status: String = "",
     var carplate : String = "",
-    var location : String = ""
-
+    var location : String = "",
+    var aName : String = ""
 )
 
 data class Notification (
@@ -76,7 +70,7 @@ data class uNotification (
 
 val ADMIN = Firebase.firestore.collection("admin")
 val USERS = Firebase.firestore.collection("users")
-val COMPOUND = Firebase.firestore.collection("compound")
+val COMPOUND = Firebase.firestore.collection("compounds")
 val UNO = Firebase.firestore.collection("notifications")
 
 fun RESTORE_USERS(ctx: Context) {
@@ -89,7 +83,7 @@ fun RESTORE_USERS(ctx: Context) {
         val admin1 = Admin(
             adminEmail = "admin1@gmail.com",
             password = "password",
-            name     = "Yeoh Wei Liang",
+            name = "Yeoh Wei Liang",
 
         )
 
@@ -97,7 +91,7 @@ fun RESTORE_USERS(ctx: Context) {
         val admin2 = Admin(
             adminEmail = "admin2@gmail.com",
             password = "password",
-            name     = "Lum Chun Hong",
+            name = "Lum Chun Hong",
 
         )
         USERS.document().set(admin2)

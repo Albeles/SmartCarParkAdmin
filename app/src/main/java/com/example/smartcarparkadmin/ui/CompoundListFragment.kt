@@ -45,6 +45,7 @@ class CompoundListFragment : Fragment() {
 
         cv.getComp().observe(viewLifecycleOwner) {
             adapter.submitList(it)
+
             binding.txtCount.text = "${it.size} record(s)"
         }
 
@@ -57,8 +58,8 @@ class CompoundListFragment : Fragment() {
             }
         })
 
-        binding.addNo.setOnClickListener { sort("date") }
-        binding.btnDesc.setOnClickListener { sort("carplate") }
+        binding.addNo.setOnClickListener { sort("carplate") }
+        binding.btnDesc.setOnClickListener { sort("date") }
 
         return binding.root
     }
@@ -72,8 +73,8 @@ class CompoundListFragment : Fragment() {
         val res = if (reverse) R.drawable.ic_down else R.drawable.ic_up
 
         when (field) {
-            "date"    -> binding.addNo.setCompoundDrawablesWithIntrinsicBounds(0, 0, res, 0)
-            "carplate"  -> binding.btnDesc.setCompoundDrawablesWithIntrinsicBounds(0, 0, res, 0)
+            "carplate"    -> binding.addNo.setCompoundDrawablesWithIntrinsicBounds(0, 0, res, 0)
+            "date"  -> binding.btnDesc.setCompoundDrawablesWithIntrinsicBounds(0, 0, res, 0)
         }
     }
 }

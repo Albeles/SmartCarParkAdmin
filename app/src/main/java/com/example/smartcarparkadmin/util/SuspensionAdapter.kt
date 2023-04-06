@@ -4,17 +4,19 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.smartcarparkadmin.data.User
+import com.example.smartcarparkadmin.data.Users
 import com.example.smartcarparkadmin.databinding.SuspensionBinding
 import com.example.smartcarparkadmin.databinding.SuspensionlistBinding
 
 class SuspensionAdapter (
-    val fn: (ViewHolders, User) -> Unit = { _, _ -> }
-) : ListAdapter<User, SuspensionAdapter.ViewHolders>(DiffCallback) {
 
-    companion object DiffCallback : DiffUtil.ItemCallback<User>() {
-        override fun areItemsTheSame(a: User, b: User) = a.id == b.id
-        override fun areContentsTheSame(a: User, b: User) = a == b
+
+    val fn: (ViewHolders, Users) -> Unit = { _, _ -> }
+) : ListAdapter<Users, SuspensionAdapter.ViewHolders>(DiffCallback) {
+
+    companion object DiffCallback : DiffUtil.ItemCallback<Users>() {
+        override fun areItemsTheSame(a: Users, b: Users) = a.id == b.id
+        override fun areContentsTheSame(a: Users, b: Users) = a == b
     }
 
     class ViewHolders(val binding: SuspensionlistBinding) : RecyclerView.ViewHolder(binding.root)

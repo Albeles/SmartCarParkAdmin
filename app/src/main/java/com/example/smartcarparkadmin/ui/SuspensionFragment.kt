@@ -27,9 +27,11 @@ class SuspensionFragment : Fragment() {
 //        cv.search("")
 //        sort("date")
 
-        adapter = SuspensionAdapter { holder, comps ->
+        adapter = SuspensionAdapter { holder, users ->
             // Item click -> navigate to UpdateFragment (id)
-
+            holder.binding.btnEdit.setOnClickListener() {
+                nav.navigate(R.id.suspentionUpdateFragment, bundleOf("carPlate" to users.carPlate,))
+            }
             // Delete button click -> delete record
 //            holder.binding.btnDelete.setOnClickListener {
 //                delete(post.id)

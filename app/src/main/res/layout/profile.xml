@@ -85,24 +85,24 @@
                 app:strokeColor="@color/md_theme_light_error" />
 
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/showname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="24dp"
-                android:text="@string/sample_text"
+                android:text="@string/name"
                 android:textAppearance="?attr/textAppearanceTitleMedium"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/student_id"
+                android:id="@+id/showstudent_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/sample_text"
+                android:text="@string/email"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="?android:attr/textColorSecondary"
                 android:textSize="16sp"
@@ -110,12 +110,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/name" />
 
             <TextView
-                android:id="@+id/student_id2"
+                android:id="@+id/showstudent_id2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/sample_text"
+                android:text="@string/contact_number"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="?android:attr/textColorSecondary"
                 android:textSize="16sp"
@@ -123,17 +123,70 @@
                 app:layout_constraintTop_toBottomOf="@+id/student_id" />
 
             <TextView
-                android:id="@+id/email"
+                android:id="@+id/showemail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
                 android:maxWidth="180dp"
-                android:text="@string/sample_text"
+                android:text="@string/password"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="?android:attr/textColorSecondary"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/student_id2" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="24dp"
+                android:text=""
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textSize="24sp"
+                app:layout_constraintStart_toEndOf="@+id/showname"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/student_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="92dp"
+                android:layout_marginTop="20dp"
+                android:text=""
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/showstudent_id"
+                app:layout_constraintTop_toBottomOf="@+id/name" />
+
+            <TextView
+                android:id="@+id/student_id2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:text=""
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/showstudent_id2"
+                app:layout_constraintTop_toBottomOf="@+id/student_id" />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="20dp"
+                android:maxWidth="180dp"
+                android:text=""
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="16sp"
+                android:inputType="textPassword"
+                app:layout_constraintStart_toEndOf="@+id/showemail"
                 app:layout_constraintTop_toBottomOf="@+id/student_id2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,248 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout4"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.ProfileEdit" >
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        app:cardElevation="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Media -->
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/compoundsubmit"
+                style="@style/ShapeAppearanceOverlay.Material3.Button"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:text="@string/add"
+                android:textColor="@color/white"
+                app:cornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reconfirmpasswordss" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ComBack"
+                style="@style/ShapeAppearanceOverlay.Material3.Button"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="40dp"
+
+                android:layout_marginEnd="60dp"
+                android:layout_marginBottom="40dp"
+                android:text="@string/back"
+                app:cornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reconfirmpasswordss" />
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/name"
+                style="?attr/textInputOutlinedStyle"
+                android:layout_width="300dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="80dp"
+                android:background="@null"
+                android:hint="@string/enterName"
+                android:textColor="@color/tarblue"
+                android:textColorHint="@color/tarblue"
+                app:boxBackgroundColor="@color/white"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp"
+                app:boxStrokeWidth="2dp"
+                app:helperTextTextAppearance="@string/platenumber"
+                app:helperTextTextColor="@color/tarblue"
+                app:hintEnabled="true"
+                app:hintTextColor="@color/tarblue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:placeholderTextColor="@color/tarblue"
+                >
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/names"
+                    android:editable="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingStart="20dp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/adminEmail"
+                style="?attr/textInputOutlinedStyle"
+                android:layout_width="300dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="20dp"
+                android:background="@null"
+                android:hint="@string/enterEmail"
+                android:textColor="@color/tarblue"
+                android:textColorHint="@color/tarblue"
+                app:boxBackgroundColor="@color/white"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp"
+                app:boxStrokeWidth="2dp"
+                app:helperTextTextAppearance="@string/platenumber"
+                app:helperTextTextColor="@color/tarblue"
+                app:hintEnabled="true"
+                app:hintTextColor="@color/tarblue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name"
+                app:placeholderTextColor="@color/tarblue"
+                >
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/adminEmails"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:editable="false"
+                    android:paddingStart="20dp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/contactnum"
+                style="?attr/textInputOutlinedStyle"
+                android:layout_width="300dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="20dp"
+                android:background="@null"
+                android:hint="@string/contactnum"
+                android:textColor="@color/tarblue"
+                android:textColorHint="@color/tarblue"
+                app:boxBackgroundColor="@color/white"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp"
+                app:boxStrokeWidth="2dp"
+                app:helperTextTextAppearance="@string/platenumber"
+                app:helperTextTextColor="@color/tarblue"
+                app:hintEnabled="true"
+                app:hintTextColor="@color/tarblue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/adminEmail"
+                app:placeholderTextColor="@color/tarblue"
+                >
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/contactnums"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingStart="20dp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/password"
+                style="?attr/textInputOutlinedStyle"
+                android:layout_width="300dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="20dp"
+                android:background="@null"
+                android:hint="@string/enterPass"
+                android:textColor="@color/tarblue"
+                android:textColorHint="@color/tarblue"
+                app:boxBackgroundColor="@color/white"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp"
+                app:boxStrokeWidth="2dp"
+                app:helperTextTextAppearance="@string/platenumber"
+                app:helperTextTextColor="@color/tarblue"
+                app:hintEnabled="true"
+                app:hintTextColor="@color/tarblue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contactnum"
+                app:placeholderTextColor="@color/tarblue"
+                >
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/passwords"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingStart="20dp"
+                    android:inputType="textPassword"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/reconfirmpasswordss"
+                style="?attr/textInputOutlinedStyle"
+                android:layout_width="300dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="20dp"
+                android:background="@null"
+                android:hint="@string/renterPass"
+                android:textColor="@color/tarblue"
+                android:textColorHint="@color/tarblue"
+                app:boxBackgroundColor="@color/white"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp"
+                app:boxStrokeWidth="2dp"
+                app:helperTextTextAppearance="@string/platenumber"
+                app:helperTextTextColor="@color/tarblue"
+                app:hintEnabled="true"
+                app:hintTextColor="@color/tarblue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/password"
+                app:placeholderTextColor="@color/tarblue"
+                >
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/reconfirmpasswordsss"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingStart="20dp"
+                    android:inputType="textPassword"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

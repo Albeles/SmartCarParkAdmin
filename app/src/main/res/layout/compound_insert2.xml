@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="3000dp"
-    tools:context=".ui.NotificationAddFragment">
+    tools:context=".ui.CompoundInsertB"
+    >
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -15,13 +16,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
 
-        android:id="@+id/ntitle"
+        android:id="@+id/carplates"
         style="?attr/textInputOutlinedStyle"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="80dp"
         android:background="@null"
-        android:hint="@string/title"
+        android:hint="@string/platenumber"
         android:textColor="@color/tarblue"
         android:textColorHint="@color/tarblue"
         app:boxBackgroundColor="@color/white"
@@ -37,50 +38,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:placeholderTextColor="@color/tarblue">
+        app:placeholderTextColor="@color/tarblue"
+        app:startIconDrawable="@mipmap/ic_mails_foreground"
+        app:startIconTint="@color/tarblue">
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
-            android:id="@+id/ntitles"
+            android:id="@+id/carplate"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingStart="20dp" />
+            android:layout_height="match_parent" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/compoundsubmit"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/submit"
-        android:textColor="@color/white"
-        app:cornerRadius="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ndesc" />
-
-    <Button
-        android:id="@+id/ComBack"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="80dp"
-        android:text="@string/back"
-        app:cornerRadius="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ndesc" />
-
-
     <com.google.android.material.textfield.TextInputLayout
 
-        android:id="@+id/ndesc"
+        android:id="@+id/carplatess"
         style="?attr/textInputOutlinedStyle"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:background="@null"
-        android:hint="@string/description"
+        android:hint="@string/location"
         android:textColor="@color/tarblue"
         android:textColorHint="@color/tarblue"
         app:boxBackgroundColor="@color/white"
@@ -95,18 +72,41 @@
         app:hintTextColor="@color/tarblue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ntitle"
-        app:placeholderTextColor="@color/tarblue">
+        app:layout_constraintTop_toBottomOf="@+id/carplates"
+        app:placeholderTextColor="@color/tarblue"
+        app:startIconTint="@color/tarblue">
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
-            android:id="@+id/ndescs"
+            android:id="@+id/carplatesss"
+            android:text="@string/blockV"
+            android:editable="false"
+            android:paddingStart="20dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:includeFontPadding="false"
-            android:paddingStart="20dp" />
-
+            android:layout_height="match_parent" />
     </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/compoundsubmit"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/issue"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/ComBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carplatess" />
 
+    <Button
+        android:id="@+id/ComBack"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="80dp"
+
+        android:text="@string/back"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carplatess" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

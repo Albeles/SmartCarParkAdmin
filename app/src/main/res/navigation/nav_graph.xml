@@ -15,67 +15,118 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.smartcarparkadmin.ui.HomeFragment"
-        android:label="fragment_home"
+        android:label="Home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/compoundFragment"
         android:name="com.example.smartcarparkadmin.ui.CompoundFragment"
-        android:label="fragment_home"
+        android:label="Compound Fragment"
         tools:layout="@layout/compound" />
     <fragment
         android:id="@+id/notificationFragment"
         android:name="com.example.smartcarparkadmin.ui.NotificationFragment"
-        android:label="fragment_home"
+        android:label="Notification"
 
         tools:layout="@layout/notification" />
     <fragment
         android:id="@+id/parkingLotFragment"
         android:name="com.example.smartcarparkadmin.ui.ParkingLotFragment"
-        android:label="ParkingLotFragment" />
+        android:label="Parking Lot" />
     <fragment
         android:id="@+id/compoundInsert"
         android:name="com.example.smartcarparkadmin.ui.CompoundInsert"
-        android:label="CompoundInsert" />
+        android:label="Compound Insert Page" />
     <fragment
         android:id="@+id/compoundListFragment"
         android:name="com.example.smartcarparkadmin.ui.CompoundListFragment"
-        android:label="compound_list"
+        android:label="Compound List"
         tools:layout="@layout/compound_list" />
     <fragment
         android:id="@+id/compoundUpdateFragment"
         android:name="com.example.smartcarparkadmin.ui.CompoundUpdateFragment"
-        android:label="compound_update"
+        android:label="Compound Detail Page"
         tools:layout="@layout/compound_update" />
     <fragment
         android:id="@+id/suspensionFragment"
         android:name="com.example.smartcarparkadmin.ui.SuspensionFragment"
-        android:label="suspension"
+        android:label="Suspension List"
         tools:layout="@layout/suspension" />
     <fragment
         android:id="@+id/notificationAddFragment"
         android:name="com.example.smartcarparkadmin.ui.NotificationAddFragment"
-        android:label="notification_add"
+        android:label="Announcement Adding Page"
         tools:layout="@layout/notification_add" />
     <fragment
         android:id="@+id/parkingLotA"
         android:name="com.example.smartcarparkadmin.ui.ParkingLotAFragment"
-        android:label="parkinglota"
+        android:label="Parking Lot A"
         tools:layout="@layout/parkinglota" />
     <fragment
         android:id="@+id/parkingLotB"
         android:name="com.example.smartcarparkadmin.ui.ParkingLotBFragment"
-        android:label="parkinglotb"
+        android:label="Parking Lot B"
         tools:layout="@layout/parkinglotb" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.smartcarparkadmin.ui.ProfileFragment"
-        android:label="profile"
+        android:label="Profile"
         tools:layout="@layout/profile" />
     <fragment
         android:id="@+id/announcementFragment"
         android:name="com.example.smartcarparkadmin.ui.AnnouncementFragment"
-        android:label="announcementlist"
+        android:label="Announcement List"
         tools:layout="@layout/announcementlist" />
+    <fragment
+        android:id="@+id/profileAdd"
+        android:name="com.example.smartcarparkadmin.ui.ProfileAdd"
+        android:label="Register Page"
+        tools:layout="@layout/profileadding" />
+    <fragment
+        android:id="@+id/profileEdit"
+        android:name="com.example.smartcarparkadmin.ui.ProfileEdit"
+        android:label="Profile Edit Page"
+        tools:layout="@layout/profileediting" />
+    <fragment
+        android:id="@+id/announcementEditFragment"
+        android:name="com.example.smartcarparkadmin.ui.AnnouncementEditFragment"
+        android:label="Announcement Edit"
+        tools:layout="@layout/annoucementedit" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.smartcarparkadmin.MainActivity"
+        android:label="header"
+        tools:layout="@layout/header" />
+    <fragment
+        android:id="@+id/special"
+        android:name="com.example.smartcarparkadmin.ui.special"
+        android:label="header"
+        tools:layout="@layout/header" />
+    <fragment
+        android:id="@+id/compoundInsertB"
+        android:name="com.example.smartcarparkadmin.ui.CompoundInsertB"
+        android:label="Compound Issue"
+        tools:layout="@layout/compound_insert2" />
+    <fragment
+        android:id="@+id/suspentionUpdateFragment"
+        android:name="com.example.smartcarparkadmin.ui.SuspentionUpdateFragment"
+        android:label="Suspention Detail Update"
+        tools:layout="@layout/suspentionupdate"/>
+    <fragment
+        android:id="@+id/report"
+        android:name="com.example.smartcarparkadmin.ui.Report"
+        android:label="Report"
+        tools:layout="@layout/reports" />
+
+    <fragment
+        android:id="@+id/addVisitor"
+        android:name="com.example.smartcarparkadmin.ui.AddVisitorFragment"
+        android:label="Add Visitor"
+        tools:layout="@layout/addv" />
+    <fragment
+        android:id="@+id/visitor"
+        android:name="com.example.smartcarparkadmin.ui.Visitor"
+        android:label="Visitor List"
+        tools:layout="@layout/visitorview" />
 
 
 </navigation>
